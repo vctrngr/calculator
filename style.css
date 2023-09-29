@@ -1,0 +1,17 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.num-button, .op-button{
+    width: 50px;
+    height: 35px;
+}
