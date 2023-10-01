@@ -96,3 +96,12 @@ function equals(e){
 }
 
 equal.addEventListener('click', equals);
+
+const clear = document.querySelector('.clear-button');
+
+clear.addEventListener('click', function(e){
+    numA = '';
+    numB = '';
+    displayContent = '';
+    display.textContent = '0';
+})
