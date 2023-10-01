@@ -11,7 +11,7 @@ body{
     padding: 0;
 }
 
-.num-button, .op-button{
+.num-buttons button, .op-buttons button{
     width: 50px;
     height: 35px;
 }

@@ -34,3 +34,17 @@ function operate(a, b, op){
     }
 
 }
+
+let displayContent = '';
+const display = document.querySelector('.display p');
+
+const numButtons = document.querySelectorAll('.num-button');
+
+function displayUpdate(e){
+    displayContent += e.target.textContent;
+    display.textContent = displayContent;
+}
+
+numButtons.forEach(but => {
+    but.addEventListener('click', displayUpdate)
+})
