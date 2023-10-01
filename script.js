@@ -53,24 +53,45 @@ numButtons.forEach(but => {
 const opButtons = document.querySelectorAll('.op-button');
 
 function opClick(e){
-    operator = e.target.textContent;
+    
     if (numA == ''){
         numA = displayContent;
         displayContent = ''; // the variable is reset internally, not necessarily the display screen
+        operator = e.target.textContent;
     }
     else {
         numB = displayContent;
         displayContent = operate(numA, numB, operator);
         display.textContent = displayContent;
+        numA = displayContent;
+        displayContent = '';
+        operator = e.target.textContent;
     }
-    // if A empty, put display content in A
-    // else, put it in B
-    // if A and B are full,
-    // perform operation
-
-
 }
 
 opButtons.forEach(but => {
     but.addEventListener('click', opClick)
-})
+});
+
+const equal = document.querySelector('.equal-button');
+
+function equals(e){
+    // if numA and numB are still there,
+    // just repeat the last operation
+    if (numA == '' && numB != ''){
+        numA = displayContent;
+        displayContent = operate(numA, numB, operator);
+        display.textContent = displayContent;
+    }
+    else{
+        numB = displayContent;
+        displayContent = operate(numA, numB, operator);
+        display.textContent = displayContent;
+        // reset
+         numA = '';
+        // keep B
+    }
+  
+}
+
+equal.addEventListener('click', equals);
