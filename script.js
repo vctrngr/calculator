@@ -82,6 +82,7 @@ function equals(e){
         numA = displayContent;
         displayContent = operate(numA, numB, operator);
         display.textContent = displayContent;
+        numA = '';
     }
     else{
         numB = displayContent;
