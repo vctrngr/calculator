@@ -1,3 +1,4 @@
+
 function add(a, b){
     return a + b;
 }
@@ -41,7 +42,6 @@ const display = document.querySelector('.display p');
 const numButtons = document.querySelectorAll('.num-button');
 
 function displayUpdate(e){
-    // if numA or numB, 
     displayContent += e.target.textContent;
     display.textContent = displayContent;
 }
@@ -73,12 +73,18 @@ opButtons.forEach(but => {
     but.addEventListener('click', opClick)
 });
 
+// equal button
+
 const equal = document.querySelector('.equal-button');
 
 function equals(e){
+    // if there's only A, it should equal itself
+    if (numA == '' && numB == ''){
+        display.textContent = displayContent;
+    }
     // if numA and numB are still there,
     // just repeat the last operation
-    if (numA == '' && numB != ''){
+   else if (numA == '' && numB != ''){
         numA = displayContent;
         displayContent = operate(numA, numB, operator);
         display.textContent = displayContent;
@@ -97,6 +103,8 @@ function equals(e){
 
 equal.addEventListener('click', equals);
 
+// clear button
+
 const clear = document.querySelector('.clear-button');
 
 clear.addEventListener('click', function(e){
@@ -104,4 +112,36 @@ clear.addEventListener('click', function(e){
     numB = '';
     displayContent = '';
     display.textContent = '0';
+});
+
+// floating point button
+
+const point = document.querySelector('.point');
+
+function floating(e){
+    if (!displayContent.includes('.')){
+        displayContent += e.target.textContent;
+        display.textContent = displayContent;
+    }
+}
+
+point.addEventListener('click', floating);
+
+// backspace button
+
+const backspace = document.querySelector('.backspace');
+
+backspace.addEventListener('click', function(e){
+    if (displayContent.length < 2){
+        displayContent = '';
+        display.textContent = '0';
+    }
+    else{
+        let str = displayContent;
+        str = str.slice(0, -1);
+    
+        displayContent = str;
+        display.textContent = displayContent;
+    }
+  
 })
