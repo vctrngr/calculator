@@ -47,7 +47,7 @@ function displayUpdate(e){
 }
 
 numButtons.forEach(but => {
-    but.addEventListener('click', displayUpdate)
+    but.addEventListener('click', displayUpdate);
 })
 
 const opButtons = document.querySelectorAll('.op-button');
@@ -149,3 +149,27 @@ backspace.addEventListener('click', function(e){
 
 // keyboard support!
 
+// numButtons.forEach(but => {
+//     but.addEventListener('keydown', function(e){
+//         console.log(e)
+//     })
+// })
+
+document.addEventListener('keydown', function(e){
+    if (e.key == '/'){
+        e.preventDefault();
+    }
+    if ('1234567890.*+-/'.includes(e.key)){
+        document.getElementById(e.key).click();
+    }
+    if (e.key == 'Enter'){
+        document.getElementById('equal').click();
+    }
+    if (e.key == 'Backspace'){
+        document.getElementById('del').click();
+    }
+    if (e.key == 'Escape'){
+        document.getElementById('clear').click();
+    }
+
+})

@@ -5,9 +5,10 @@ body{
 
 .buttons{
     display: flex;
+    align-items: center;
     justify-content: center;
     gap: 0;
-    margin: 0 20px;
+    margin: 50px 20px;
     padding: 0;
 }
 
@@ -50,11 +51,12 @@ body{
     margin: 25px 20px;
     display: flex;
     align-items: flex-end;
+    justify-content: end;
 }
 
 .display p{
-    padding-left: 15px;
+    margin: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 24px;
+    font-size: 32px;
     color: #3c3744;
 }
