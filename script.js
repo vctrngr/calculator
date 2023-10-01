@@ -144,4 +144,8 @@ backspace.addEventListener('click', function(e){
         display.textContent = displayContent;
     }
   
-})
+});
+
+
+// keyboard support!
+

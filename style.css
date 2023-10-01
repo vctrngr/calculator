@@ -7,11 +7,41 @@ body{
     display: flex;
     justify-content: center;
     gap: 0;
+    margin: 0 20px;
+    padding: 0;
+}
+
+.op-buttons button{
+    width: 100%;
+    height: 45px;
+}
+
+.num-buttons button{
+    width: 75px;
+    height: 67.5px;
+}
+
+.num-buttons, .op-buttons{
     margin: 0;
     padding: 0;
 }
 
-.num-buttons button, .op-buttons button{
-    width: 50px;
-    height: 35px;
+.enclosure{
+    width: 400px;
+    height: 500px;
+    background-color: #eee;
+}
+
+.display{
+    height: 100px;
+    background-color: wheat;
+    margin: 25px 20px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.display p{
+    padding-left: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
 }
